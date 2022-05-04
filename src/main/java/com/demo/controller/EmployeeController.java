@@ -1,6 +1,7 @@
 package com.demo.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -39,6 +40,11 @@ public class EmployeeController {
 	@DeleteMapping("/delete/{id}")
 	public String deleteEmpl(@PathVariable("id") int id) {
 		return service.deleteEmp(id);
+	}
+	
+	@GetMapping("/employees/{id}")
+	public Optional<Employee> getByID(@PathVariable("id") int id ) {
+		return service.getEmpByID(id);
 	}
 	
 

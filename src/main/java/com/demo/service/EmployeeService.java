@@ -2,6 +2,7 @@ package com.demo.service;
 
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,6 +27,9 @@ public class EmployeeService {
 	public String deleteEmp(int id) {
 		repo.deleteById(id);
 		return "Employee deleted With ID:"+id;
+	}
+	public Optional<Employee> getEmpByID(int id) {
+		return repo.findById(id);
 	}
 	
 	public Employee updateEmp(Employee e1) {
