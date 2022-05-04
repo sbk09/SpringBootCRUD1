@@ -22,5 +22,18 @@ public class EmployeeService {
 	public List<Employee> getAllEmployee(){
 		return repo.findAll();
 	}
-
+	
+	public String deleteEmp(int id) {
+		repo.deleteById(id);
+		return "Employee deleted With ID:"+id;
+	}
+	
+	public Employee updateEmp(Employee e1) {
+		Employee existingEmp=repo.findById(e1.getEmp_id()).orElse(null);
+		existingEmp.setEmp_name(e1.getEmp_name());
+		existingEmp.setEmp_dept(e1.getEmp_dept());
+		existingEmp.setEmp_salary(e1.getEmp_salary());
+		existingEmp.setEmp_id(e1.getEmp_id());
+		return repo.save(existingEmp);
+	}
 }
