@@ -38,6 +38,21 @@ public class Employee {
 	public void setEmp_salary(int emp_salary) {
 		this.emp_salary = emp_salary;
 	}
+	public Employee() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Employee(int emp_id, String emp_name, String emp_dept, int emp_salary) {
+		super();
+		this.emp_id = emp_id;
+		this.emp_name = emp_name;
+		this.emp_dept = emp_dept;
+		this.emp_salary = emp_salary;
+	}
+	@Override
+	public String toString() {
+		return "ID: "+emp_id+", Name: "+emp_name+", Dept: "+emp_dept+", Salary: "+emp_salary;
+	}
 	
 	
 

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +18,11 @@ import com.demo.service.EmployeeService;
 
 @RestController
 public class EmployeeController {
+	//How to mock a pay load that we get from request body
+	//write test cases also for a controller
+	//json.assert methods
+	//lets see that we can jackson to handle json 
+	//integration testing / eye-testing how it is done
 	
 	@Autowired
 	private EmployeeService service;
@@ -39,6 +45,16 @@ public class EmployeeController {
 	@DeleteMapping("/delete/{id}")
 	public String deleteEmpl(@PathVariable("id") int id) {
 		return service.deleteEmp(id);
+	}
+	
+	@GetMapping("/employee/{id}")
+	public Employee getEmployee(@PathVariable("id") int id) {
+		return service.getEmpByID(id);
+	}
+	
+	@PatchMapping("/salary/{id}/{salary}")
+	public Employee updateSalary(@PathVariable("id") int id, @PathVariable("salary") int sal) {
+		return service.updateSal(id, sal);
 	}
 	
 
