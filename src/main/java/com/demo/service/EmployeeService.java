@@ -2,12 +2,12 @@ package com.demo.service;
 
 
 import java.util.List;
-<<<<<<< HEAD
+//<<<<<<< HEAD
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-=======
+//=======
 import java.util.Optional;
->>>>>>> 9bd56ed8efdc53f0adcfb9c920657e15005e7547
+//>>>>>>> 9bd56ed8efdc53f0adcfb9c920657e15005e7547
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -49,9 +49,9 @@ public class EmployeeService {
 		repo.deleteById(id);
 		return "Employee deleted With ID:"+id;
 	}
-	public Optional<Employee> getEmpByID(int id) {
-		return repo.findById(id);
-	}
+	/*
+	 * public Optional<Employee> getEmpByID(int id) { return repo.findById(id); }
+	 */
 	
 	public Employee updateEmp(Employee e1) {
 		Employee existingEmp=repo.findById(e1.getEmp_id()).orElse(null);

@@ -48,7 +48,7 @@ public class EmployeeController {
 		return service.deleteEmp(id);
 	}
 	
-<<<<<<< HEAD
+//<<<<<<< HEAD
 	@GetMapping("/employee/{id}")
 	public Employee getEmployee(@PathVariable("id") int id) {
 		return service.getEmpByID(id);
@@ -59,12 +59,12 @@ public class EmployeeController {
 		return service.updateSal(id, sal);
 	}
 	
-=======
-	@GetMapping("/employees/{id}")
-	public Optional<Employee> getByID(@PathVariable("id") int id ) {
-		return service.getEmpByID(id);
-	}
+//=======
+	/*
+	 * @GetMapping("/employees/{id}") public Optional<Employee>
+	 * getByID(@PathVariable("id") int id ) { return service.getEmpByID(id); }
+	 */
 	
->>>>>>> 9bd56ed8efdc53f0adcfb9c920657e15005e7547
+//>>>>>>> 9bd56ed8efdc53f0adcfb9c920657e15005e7547
 
 }
