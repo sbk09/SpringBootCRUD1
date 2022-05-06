@@ -1,6 +1,7 @@
 package com.demo.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -47,6 +48,7 @@ public class EmployeeController {
 		return service.deleteEmp(id);
 	}
 	
+<<<<<<< HEAD
 	@GetMapping("/employee/{id}")
 	public Employee getEmployee(@PathVariable("id") int id) {
 		return service.getEmpByID(id);
@@ -57,5 +59,12 @@ public class EmployeeController {
 		return service.updateSal(id, sal);
 	}
 	
+=======
+	@GetMapping("/employees/{id}")
+	public Optional<Employee> getByID(@PathVariable("id") int id ) {
+		return service.getEmpByID(id);
+	}
+	
+>>>>>>> 9bd56ed8efdc53f0adcfb9c920657e15005e7547
 
 }
